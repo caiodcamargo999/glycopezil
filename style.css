@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+
 :root {
     --primary-color: #6D52A4;
     --primary-dark: #442A76;
@@ -447,7 +449,16 @@ img {
 }
 
 .refund-badge {
-    flex: 0 0 200px;
+    flex: 0 0 300px;
+    transition: var(--transition);
+}
+
+.refund-badge:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.refund-text {
+    flex: 1;
 }
 
 .refund-text blockquote {
@@ -566,6 +577,124 @@ img {
 .lifestyle-img:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 50px rgba(106, 76, 175, 0.2);
+}
+
+/* Identical Pricing Boxes Refined */
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.price-box {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    text-align: center;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 320px;
+    width: 100%;
+}
+
+.price-box:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.featured-box {
+    border: 4px solid #ff9800;
+    position: relative;
+}
+
+.p-header {
+    padding: 20px 15px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.6rem;
+    text-transform: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reflection Style */
+.p-header::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+}
+
+.p-header.gray { background: #3b3b5c; }
+.p-header.orange { background: #ff9800; padding: 40px 15px; }
+.p-header.blue { background: #2e2e7a; }
+
+.p-header .p-title { font-weight: 900; letter-spacing: -0.5px; }
+.p-main-title { font-size: 2.2rem; line-height: 1; font-weight: 900; }
+
+.p-content { padding: 25px 30px; flex-grow: 1; display: flex; flex-direction: column; }
+
+.p-supply { margin-bottom: 20px; border-bottom: 1px dashed #ddd; padding-bottom: 15px; }
+.p-qty { font-weight: 900; font-size: 1.4rem; color: #000; text-transform: uppercase; }
+.p-days { font-size: 1.1rem; color: #333; font-weight: 700; }
+
+.p-image { margin-bottom: 20px; min-height: 160px; display: flex; align-items: center; justify-content: center; }
+.p-image img { max-width: 100%; max-height: 160px; object-fit: contain; }
+
+.p-price { display: flex; justify-content: center; align-items: flex-start; margin-bottom: 15px; }
+.p-currency { font-size: 1.8rem; font-weight: 900; margin-top: 8px; }
+.p-big { font-size: 5rem; font-weight: 900; line-height: 0.85; letter-spacing: -2px; }
+.p-per { font-size: 0.8rem; font-weight: 800; text-align: left; line-height: 1.1; margin-top: 15px; margin-left: 5px; text-transform: uppercase; }
+
+.p-features { list-style: none; padding: 0; margin-bottom: 20px; border-top: 1px dashed #ddd; padding-top: 15px; }
+.p-features li { font-size: 0.95rem; font-weight: 900; margin-bottom: 8px; color: #000; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.p-features i { font-size: 1.1rem; }
+
+.p-totals { font-weight: 900; font-size: 1.1rem; margin-bottom: 15px; }
+.p-old { text-decoration: line-through; color: #999; margin-right: 5px; font-weight: 700; }
+.p-new { color: #000; }
+
+.p-shipping { border-radius: 5px; display: inline-block; padding: 5px 15px; font-size: 0.85rem; font-weight: 900; margin: 0 auto 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+.p-shipping.red { background: #d32f2f; color: #fff; }
+.p-shipping.orange { background: #ff9800; color: #fff; }
+.p-shipping.black { background: #000; color: #fff; }
+
+.p-button { 
+    background: linear-gradient(180deg, #ffd700 0%, #e6be00 100%); 
+    border-bottom: 5px solid #b8860b; 
+    color: #000; 
+    text-decoration: none; 
+    font-weight: 900; 
+    font-size: 1.2rem; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    transition: 0.2s; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px;
+    text-transform: uppercase;
+}
+
+.p-button:active { transform: translateY(2px); border-bottom: 2px solid #b8860b; }
+
+.p-payments { display: flex; gap: 10px; justify-content: center; margin-top: auto; padding-top: 10px; }
+.p-payments img { transition: 0.3s; opacity: 0.9; }
+
+@media (max-width: 1024px) {
+    .pricing-grid { flex-direction: column; align-items: center; gap: 40px; }
+    .price-box:hover { transform: scale(1.02); }
 }
 
 /* FAQ */
